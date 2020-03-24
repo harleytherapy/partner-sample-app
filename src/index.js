@@ -11,8 +11,8 @@ var digest
 const authSecret = process.env.AUTH_SECRET
 const authId = process.env.AUTH_ID
 const host = process.env.HOST
-const path = '/clients/3'
-const method = 'GET'
+const path = '/clients'
+const method = 'POST'
 const requestId = uuid()
 const isoDate = (new Date).toISOString()
 const payload = `${method} ${path} ${requestId} ${isoDate}`
@@ -36,7 +36,7 @@ const checkStatus = (res) => {
 
 fetch(`${host}${path}`, {
   method: method,
-  // body: JSON.stringify(body),
+  body: JSON.stringify(body),
   headers: {
     'Authorization': `${authId}:${authString}`,
     'Date': isoDate,
