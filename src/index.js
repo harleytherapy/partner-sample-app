@@ -8,15 +8,15 @@ dotenv.config()
 
 var digest
 
-const secret = process.env.SECRET
-const clientId = process.env.CLIENT_ID
+const authSecret = process.env.AUTH_SECRET
+const authId = process.env.AUTH_ID
 const host = process.env.HOST
 const path = '/clients/3'
 const method = 'GET'
 const requestId = uuid()
 const isoDate = (new Date).toISOString()
 const payload = `${method} ${path} ${requestId} ${isoDate}`
-const authString = encHex.stringify(hmacSHA256(payload, secret))
+const authString = encHex.stringify(hmacSHA256(payload, authSecret))
 const body = {
   email: 'person@example.net',
   phone: '+447999999999',
@@ -38,7 +38,7 @@ fetch(`${host}${path}`, {
   method: method,
   // body: JSON.stringify(body),
   headers: {
-    'Authorization': `${clientId}:${authString}`,
+    'Authorization': `${authId}:${authString}`,
     'Date': isoDate,
     'X-HT-Request-id': requestId,
     'Content-type': 'application/json',
