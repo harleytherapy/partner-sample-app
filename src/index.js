@@ -22,8 +22,7 @@ const body = {
   phone: '+447999999999',
   first_name: 'First',
   last_name: 'Last',
-  date_of_birth: '1986-10-04',
-  partner_client_id: '33334'
+  date_of_birth: '1986-10-04'
 }
 
 const checkStatus = (res) => {
