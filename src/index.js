@@ -19,10 +19,11 @@ const payload = `${method} ${path} ${requestId} ${isoDate}`
 const authString = encHex.stringify(hmacSHA256(payload, authSecret))
 const body = {
   email: 'person@example.net',
-  phone: '+447999999999',
+  phone_number: '+447999999999',
   first_name: 'First',
   last_name: 'Last',
-  date_of_birth: '1986-10-04'
+  date_of_birth: '1986-10-04',
+  gender: 'male'
 }
 
 const checkStatus = (res) => {
@@ -56,5 +57,5 @@ fetch(`${host}${path}`, {
     console.log(data);
   })
   .catch((error) => {
-  console.log(error)
+    console.log(error)
   })

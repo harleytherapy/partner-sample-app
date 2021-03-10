@@ -11,4 +11,19 @@ npx webpack
 node dist/main.js
 ```
 
-(c) 2020 Harley Therapy Platform Ltd
+Response to the request will be to either create or retrieve a client matching exactly all the columns provided.
+
+Client email and phone numbers are unique and cannot be re-used across multiple clients.
+
+The response on success will be of the form:
+
+```json
+{
+  "id": 1234,
+  "handover_url": "https://mysever.com/?client_id=N2MwZDY2NDM4Mzg1NGNlZGVjZjdmYTMzMzZiMzRhZmZjZmNiMTcyZWNhYjI2YzRhNDVlNGExNzUyYjUzZWZjYiQkdzRGWEJ1NjZneVBnNlJJPS0tVWRqRVhSdS9vTWxBdWRZTS0tTXVNcUtpb3ljN3d2aGlsTTlHT1l4dz09"
+}
+```
+
+The `handover_url` can be used to send the client to the harleytherapy.com site where they will proceed through a simple login/validation check vie their email (default) or mobile to access their account.
+
+(c) 2021 Harley Therapy Platform Ltd
