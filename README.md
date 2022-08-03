@@ -1,7 +1,9 @@
-Partner API Example
-===================
+# Partner API Example
 
-This contains a sample Node JS app to support the client creation API on harleytherapy.com
+This contains a sample Node JS app to support the Harley Therapy Platform **Partner API** on
+HarleyTherapy.com.
+
+**Documentaion for the API can be found [here](./docs/api.md).**
 
 Build & run with the following commands and a recent version of node (tested with 13.11.0).
 
@@ -24,6 +26,8 @@ The response on success will be of the form:
 }
 ```
 
-The `handover_url` can be used to send the client to the harleytherapy.com site where they will proceed through a simple login/validation check vie their email (default) or mobile to access their account.
+The **`handover_url`** can be used to send the client to the harleytherapy.com site where they will proceed through a simple login/validation check vie their email (default) or mobile to access their account.
 
-(c) 2021 Harley Therapy Platform Ltd
+---
+
+(c) 2021 Harley Therapy Platform LTD
